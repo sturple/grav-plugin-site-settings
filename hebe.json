@@ -1,0 +1,15 @@
+{
+   "project":"grav-plugin-cssless",
+   "platforms":{
+      "grav":{
+         "nodes":{
+            "plugin":[
+               {
+                  "source":"/",
+                  "destination":"/user/plugins/sturple/cssless"
+               }
+            ]
+         }
+      }
+   }
+}

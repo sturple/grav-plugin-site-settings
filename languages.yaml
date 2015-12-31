@@ -1,0 +1,16 @@
+en:
+    PLUGIN_CSSLESS:
+        PLUGIN_STATUS: Plugin status
+        PLUGIN_COMPILE: Compile LESS
+        PLUGIN_COMPILE_HELP: Disable Compile option for Production.
+        PLUGIN_FORCECOMPILE: Force Compile
+        PLUGIN_FORCECOMPILE_HELP: Disable Compile option for Production.        
+        PLUGIN_COMMENTS: Perserve Comments
+        PLUGIN_FILEPATH: File Path
+        PLUGIN_OUTPUTFILE: Output File
+        PLUGIN_FORMATTER: Formatter
+        
+        
+fr:
+    PLUGIN_CSSLESS:
+        PLUGIN_STATUS: état Plugin  

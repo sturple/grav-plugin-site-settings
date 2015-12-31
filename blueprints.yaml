@@ -1,0 +1,183 @@
+name: SiteSettings
+version: 0.0.1
+description: Allows Css less compile with Site Settings.
+icon: css3
+author:
+    name: FGMS
+    email: shawn.turple@fifthgeardev.com
+    url:  https://github.com/sturple
+homepage: https://github.com/sturple/grav-plugin-site-settings
+keywords: plugin, css, less
+homepage: 
+bugs: https://github.com/sturple/grav-plugin-site-settings/issues
+license: MIT
+
+form:
+    validation: loose
+    fields:                
+        tabs:
+            type: tabs
+            active: 1
+            fields:
+                siteconfig:
+                    type: tab
+                    title: Site Config
+                    fields:
+                        uploads:
+                            type: file
+                            multiple: false
+                            label: Top Logo
+                            destination: 'assets/images'
+                            accept:
+                                - image/*
+                        
+                csscolors:
+                    type: tab
+                    title: Colors
+                    fields:
+                        headingColor:
+                            type: text
+                            size: small
+                            label: Heading Color
+                            help: twig(headingColor)
+                            default: '#333'                               
+                        bodyColor:
+                            type: text
+                            size: small
+                            label: Body Color
+                            help: twig(bodyColor)
+                            default: '#333'
+                     
+                        linkColor:
+                            type: text
+                            size: small
+                            label: Link Color
+                            help: twig(linkColor)
+                            default: 'inherit'                              
+                        linkColorHover:
+                            type: text
+                            size: small
+                            label: Link Color
+                            help: twig(linkColorHover)
+                            default: 'inherit'                               
+                            
+                cssfonts:
+                    type: tab
+                    title: Fonts
+                    fields:
+
+                        fontFamilyBody:
+                            type: text
+                            size: medium
+                            label: Body Font Family
+                            help: twig(fontFamilyBody)
+                            default: Georgia
+                        fontFamilyHeading:
+                            type: text
+                            size: medium
+                            label: Heading Font Family
+                            help: twig(fontFamilyHeading)
+                            default: Georgia                            
+                        fontFamilyBlockquote:
+                            type: text
+                            size: medium
+                            label: Blockquote Font Family
+                            help: twig(fontFamilyBlockquote)
+                            default: Georgia
+                        fontFamilySignature:
+                            type: text
+                            size: medium
+                            label: Blockquote Font Family
+                            help: twig(fontFamilySignature)
+                            default: "'Kaushan Script', cursive"
+                        googleFonts:
+                            type: selectize
+                            label: Google Fonts
+                            help: Add all google fonts and plugin will load fonts automatically                            
+                csstypography:
+                    type: tab
+                    title: Typography
+                    fields:
+                        cssModulePaddingTop:
+                            type: text
+                            size: small
+                            label: Module Padding;
+                            help: twig(cssModulePaddingTop)
+                            default: 12px
+                        cssModulePaddingBottom:
+                            type: text
+                            size: small
+                            label: Module Padding;
+                            help: twig(cssModulePaddingBottom)
+                            default: 12px                            
+                                   
+
+                less:
+                    type: tab
+                    title: Less Compiler
+                    fields:                   
+                        enabled:
+                            type: toggle            
+                            label: PLUGIN_CSSLESS.PLUGIN_STATUS
+                            highlight: 1
+                            default: 1
+                            options:
+                                1: PLUGIN_ADMIN.ENABLED
+                                0: PLUGIN_ADMIN.DISABLED
+                            validate:
+                                type: bool
+                                
+                        compile:
+                            type: toggle
+                            help: PLUGIN_CSSLESS.PLUGIN_COMPILE_HELP
+                            label: PLUGIN_CSSLESS.PLUGIN_COMPILE
+                            highlight: 0
+                            default: 0
+                            options:
+                                1: PLUGIN_ADMIN.ENABLED
+                                0: PLUGIN_ADMIN.DISABLED
+                            validate:
+                                type: bool
+                        forcecompile:
+                            type: toggle
+                            help: PLUGIN_CSSLESS.PLUGIN_FORCECOMPILE_HELP
+                            label: PLUGIN_CSSLESS.PLUGIN_FORCECOMPILE
+                            highlight: 0
+                            default: 0
+                            options:
+                                1: PLUGIN_ADMIN.ENABLED
+                                0: PLUGIN_ADMIN.DISABLED
+                            validate:
+                                type: bool                               
+                                                
+                        comments:
+                            type: toggle           
+                            label: PLUGIN_CSSLESS.PLUGIN_COMMENTS
+                            highlight: 0
+                            default: 0
+                            options:
+                                1: PLUGIN_ADMIN.ENABLED
+                                0: PLUGIN_ADMIN.DISABLED
+                            validate:
+                                type: bool
+                                
+                        filepath:
+                            type: text
+                            label: PLUGIN_CSSLESS.PLUGIN_FILEPATH
+                            placeholder: /to/my/file.css
+                            
+                        outputfile:
+                            type: hidden
+                            label: PLUGIN_CSSLESS.PLUGIN_OUTPUTFILE
+                            default: user/plugins/cssless/assets/css/style.css
+                            
+                        formatter:
+                            type: select
+                            label: PLUGIN_CSSLESS.PLUGIN_FORMATTER
+                            default: 'classic'
+                            options:
+                                lessjs: lessjs
+                                compressed: compressed
+                                classic: classic
+            
+        
